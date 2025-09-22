@@ -60,6 +60,7 @@ getPermutationResults <- function(x, y, Tn_BM, theta, se, nperm, alpha, seed,
 
   # p-value and rejection decision according to Equation (13)
   pval <- 2 * min(mean(T_perm <= Tn_BM), mean(T_perm >= Tn_BM))
+  pval <- ifelse(pval==0,1/(nperm+1),pval)
   rejH0 <- pval < alpha
 
   # Confidence interval according to Equation (14)
