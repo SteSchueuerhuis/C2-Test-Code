@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Stephen Schueuerhuis">
+
+<title>Code Documentation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="README_files/libs/clipboard/clipboard.min.js"></script>
+<script src="README_files/libs/quarto-html/quarto.js"></script>
+<script src="README_files/libs/quarto-html/popper.min.js"></script>
+<script src="README_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="README_files/libs/quarto-html/anchor.min.js"></script>
+<link href="README_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="README_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="README_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="README_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="README_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#content" id="toc-content" class="nav-link active" data-scroll-target="#content"> <span class="header-section-number">1</span> Content</a></li>
+  <li><a href="#file-and-folder-structure" id="toc-file-and-folder-structure" class="nav-link" data-scroll-target="#file-and-folder-structure"> <span class="header-section-number">2</span> File and Folder-Structure</a></li>
+  <li><a href="#main-functionality" id="toc-main-functionality" class="nav-link" data-scroll-target="#main-functionality"> <span class="header-section-number">3</span> Main functionality</a>
+  <ul class="collapse">
+  <li><a href="#gettestresults.r" id="toc-gettestresults.r" class="nav-link" data-scroll-target="#gettestresults.r"> <span class="header-section-number">3.1</span> <code>getTestResults.R</code></a></li>
+  <li><a href="#getstudentizedpermutationtest.r" id="toc-getstudentizedpermutationtest.r" class="nav-link" data-scroll-target="#getstudentizedpermutationtest.r"> <span class="header-section-number">3.2</span> <code>getStudentizedPermutationTest.R</code></a></li>
+  <li><a href="#util.r" id="toc-util.r" class="nav-link" data-scroll-target="#util.r"> <span class="header-section-number">3.3</span> <code>util.R</code></a></li>
+  </ul></li>
+  <li><a href="#how-to-reproduce-the-results-shown-in-the-paper" id="toc-how-to-reproduce-the-results-shown-in-the-paper" class="nav-link" data-scroll-target="#how-to-reproduce-the-results-shown-in-the-paper"> <span class="header-section-number">4</span> How to reproduce the results shown in the paper</a>
+  <ul class="collapse">
+  <li><a href="#all-results" id="toc-all-results" class="nav-link" data-scroll-target="#all-results"> <span class="header-section-number">4.1</span> All results</a></li>
+  <li><a href="#exemplary-results" id="toc-exemplary-results" class="nav-link" data-scroll-target="#exemplary-results"> <span class="header-section-number">4.2</span> Exemplary results</a></li>
+  </ul></li>
+  <li><a href="#session-info" id="toc-session-info" class="nav-link" data-scroll-target="#session-info"> <span class="header-section-number">5</span> Session Info</a>
+  <ul class="collapse">
+  <li><a href="#local" id="toc-local" class="nav-link" data-scroll-target="#local"> <span class="header-section-number">5.1</span> Local</a></li>
+  <li><a href="#cluster" id="toc-cluster" class="nav-link" data-scroll-target="#cluster"> <span class="header-section-number">5.2</span> Cluster</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Code Documentation</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<p class="subtitle lead">A New Approach to the Nonparametric Behrens-Fisher Problem with Compatible Confidence Intervals</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Stephen Schueuerhuis </p>
+          </div>
+  </div>
+    
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+
+</div>
+<section id="content" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="content"><span class="header-section-number">1</span> Content</h2>
+<p>This files contains a short documentation of the code belonging to the submitted paper <strong><em>A New Approach to the Nonparametric Behrens-Fisher Problem with Compatible Confidence Intervals</em></strong> and illustrates how the results shown in the paper may be reproduced.</p>
+<p>To begin working with the submitted code, open the R project file <code>nonparTests.Rproj</code>. This ensures that all file paths are correctly set relative to the project root.</p>
+</section>
+<section id="file-and-folder-structure" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="file-and-folder-structure"><span class="header-section-number">2</span> File and Folder-Structure</h2>
+<p>The project contains the following files and folders:</p>
+<table class="table">
+<caption>File and Folder-Structure</caption>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 80%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>functions</code></td>
+<td>Folder containing the main function <code>getTestResults()</code>, <code>getStudentizedPermutationTest()</code> as well as helper functions in <code>util.R</code></td>
+</tr>
+<tr class="even">
+<td><code>results</code></td>
+<td>Folder containing result files <code>df_t1e.csv</code> and <code>df_pwr_cov.csv</code></td>
+</tr>
+<tr class="odd">
+<td><code>plots</code></td>
+<td>Folder containing the plots shown in the paper</td>
+</tr>
+<tr class="even">
+<td><code>settings.R</code></td>
+<td><code>R</code>-script creating <code>tibble</code>s containing the simulation scenarios</td>
+</tr>
+<tr class="odd">
+<td><code>simulation_main.R</code></td>
+<td><code>R</code>-script performing the simulation and creating the files <code>df_t1e.csv</code> and <code>df_pwr_cov.csv</code>. To do that, the simulation functions <code>simulateT1E()</code> and <code>simulatePWRCOV()</code> from <code>util.R</code>, which are wrapper functions around <code>getTestResults()</code> are used</td>
+</tr>
+<tr class="even">
+<td><code>plots.R</code></td>
+<td><code>R</code>-script importing <code>df_t1e.csv</code> and <code>df_pwr_cov.csv</code> and creating the plots shown in the paper</td>
+</tr>
+<tr class="odd">
+<td><code>examples.R</code></td>
+<td><code>R</code>-script creating the boxplot and computing the results for the data examples (Section 2 and 6 in the paper, data from Table 2), see 4.1 in the documentation</td>
+</tr>
+<tr class="even">
+<td><code>simulation_repro_example.R</code></td>
+<td>Script reproducing results for some simulation settings, see 4.2 in the documentation</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="main-functionality" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="main-functionality"><span class="header-section-number">3</span> Main functionality</h2>
+<section id="gettestresults.r" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="gettestresults.r"><span class="header-section-number">3.1</span> <code>getTestResults.R</code></h3>
+<p>This function compares two samples represented by matrices <code>X</code> and <code>Y</code>. It loops over each column (i.e., sample) and applies the Brunner-Munzel test and the newly proposed <span class="math inline">\(C^2\)</span> test. If <code>permutation = TRUE</code>, a studentized permutation version of the Brunner-Munzel test is also performed. The results for each sample are stacked vertically into a <code>data.table</code>, with the <code>sample</code> column indicating which dataset each row of results belongs to. This function constitutes the core of the simulation study and is called repeatedly across all simulation settings.</p>
+<table class="table">
+<caption>Function Inputs</caption>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>X</code></td>
+<td>An <span class="math inline">\(n \times d\)</span> matrix containing the first sample, where each column <span class="math inline">\(i=1,\dots,d\)</span> represents an independent dataset.</td>
+</tr>
+<tr class="even">
+<td><code>Y</code></td>
+<td>An <span class="math inline">\(n \times d\)</span> matrix containing the second sample, structured similarly to <code>X</code>.</td>
+</tr>
+<tr class="odd">
+<td><code>alpha</code></td>
+<td>Significance level used for hypothesis testing.</td>
+</tr>
+<tr class="even">
+<td><code>permutation</code></td>
+<td>Logical (<code>TRUE</code>/<code>FALSE</code>). If <code>TRUE</code>, a studentized permutation test is performed.</td>
+</tr>
+<tr class="odd">
+<td><code>nperm</code></td>
+<td>Integer specifying the number of permutations (used only if <code>permutation = TRUE</code>).</td>
+</tr>
+<tr class="even">
+<td><code>seed</code></td>
+<td>Integer value used to set the random seed for reproducibility.</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<caption>Function Outputs</caption>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>test</code></td>
+<td>A character string indicating the name of the test to be performed.</td>
+</tr>
+<tr class="even">
+<td><code>lower</code></td>
+<td>Lower bound of the confidence interval.</td>
+</tr>
+<tr class="odd">
+<td><code>theta</code></td>
+<td>Estimated Mann–Whitney effect size.</td>
+</tr>
+<tr class="even">
+<td><code>upper</code></td>
+<td>Upper bound of the confidence interval.</td>
+</tr>
+<tr class="odd">
+<td><code>variance</code></td>
+<td>Estimated variance of <code>theta</code>.</td>
+</tr>
+<tr class="even">
+<td><code>ties</code></td>
+<td>Estimated probability of ties between groups.</td>
+</tr>
+<tr class="odd">
+<td><code>statistic</code></td>
+<td>Test statistic value for the selected test.</td>
+</tr>
+<tr class="even">
+<td><code>pval</code></td>
+<td>P-value associated with the test.</td>
+</tr>
+<tr class="odd">
+<td><code>rejH0</code></td>
+<td>Logical; <code>TRUE</code> if the null hypothesis is rejected (i.e., <code>pval &lt; alpha</code>).</td>
+</tr>
+<tr class="even">
+<td><code>separation</code></td>
+<td>Logical; <code>TRUE</code> if the samples are separated.</td>
+</tr>
+<tr class="odd">
+<td><code>sample</code></td>
+<td>Identifier for the dataset (column) the results correspond to.</td>
+</tr>
+</tbody>
+</table>
+<section id="example-function-call" class="level4" data-number="3.1.1">
+<h4 data-number="3.1.1" class="anchored" data-anchor-id="example-function-call"><span class="header-section-number">3.1.1</span> <strong>Example function call:</strong></h4>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">28072025</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">15</span><span class="sc">*</span><span class="dv">2</span>), <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">15</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">15</span><span class="sc">*</span><span class="dv">2</span>, <span class="at">mean =</span> <span class="dv">1</span>), <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">15</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">getTestResults</span>(<span class="at">X =</span> X, <span class="at">Y =</span> Y, <span class="at">alpha =</span> <span class="fl">0.05</span>, <span class="at">permutation =</span> <span class="cn">TRUE</span>, <span class="at">nperm =</span> <span class="fl">1e4</span>, <span class="at">seed =</span> <span class="dv">9072925</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>                           test     lower     theta     upper  variance ties
+1:                      BM-Test 0.6928175 0.8488889 1.0049602 0.1738836    0
+2:                      BM-Test 0.5511224 0.7466667 0.9422110 0.2671746    0
+3:                      C2-Test 0.6549900 0.8488889 0.9432555 0.1666697    0
+4:                      C2-Test 0.5386136 0.7466667 0.8815366 0.2573061    0
+5: Studentized Permutation test 0.6916653 0.8488889 1.0099338        NA   NA
+6: Studentized Permutation test 0.5517728 0.7466667 0.9440772        NA   NA
+   statistic         pval rejH0 separation   sample
+1:  4.582669 8.983773e-05  TRUE      FALSE Sample 1
+2:  2.613807 1.573948e-02  TRUE      FALSE Sample 2
+3: 11.242066 7.996408e-04  TRUE      FALSE Sample 1
+4:  5.367489 2.051549e-02  TRUE      FALSE Sample 2
+5:  4.582669 2.000000e-04  TRUE      FALSE Sample 1
+6:  2.613807 1.740000e-02  TRUE      FALSE Sample 2</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="getstudentizedpermutationtest.r" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="getstudentizedpermutationtest.r"><span class="header-section-number">3.2</span> <code>getStudentizedPermutationTest.R</code></h3>
+<p>This function is called by the <code>getTestResults()</code> function and performs the studentized permutation test proposed by Neubert and Brunner (2007), using <code>nperm</code> permutations. The results from this test are then combined with the results of other tests returned by <code>getTestResults()</code>. The seed parameter ensures reproducibility, which is required due to the randomness introduced by the permutation procedure. Some parameters are used as input and written into the output to ensure consistent formatting with the other tests from <code>getTestResults()</code>.</p>
+<table class="table">
+<caption>Function Inputs</caption>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>x</code></td>
+<td>An n × 1 vector containing the first sample.</td>
+</tr>
+<tr class="even">
+<td><code>y</code></td>
+<td>An n × 1 vector containing the second sample.</td>
+</tr>
+<tr class="odd">
+<td><code>nperm</code></td>
+<td>Number of permutations (used only if <code>permutation = TRUE</code>).</td>
+</tr>
+<tr class="even">
+<td><code>alpha</code></td>
+<td>Significance level for hypothesis testing.</td>
+</tr>
+<tr class="odd">
+<td><code>seed</code></td>
+<td>Random seed for reproducibility.</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<caption>Function Outputs</caption>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Result</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Tn_BM</code></td>
+<td>Test statistic from the Brunner-Munzel test.</td>
+</tr>
+<tr class="even">
+<td><code>theta</code></td>
+<td>Estimated Mann–Whitney effect size.</td>
+</tr>
+<tr class="odd">
+<td><code>se</code></td>
+<td>Estimated standard error (DeLong variance estimator).</td>
+</tr>
+<tr class="even">
+<td><code>test</code></td>
+<td>Name of the test performed.</td>
+</tr>
+<tr class="odd">
+<td><code>lower</code></td>
+<td>Lower bound of the confidence interval.</td>
+</tr>
+<tr class="even">
+<td><code>upper</code></td>
+<td>Upper bound of the confidence interval.</td>
+</tr>
+<tr class="odd">
+<td><code>variance</code></td>
+<td>Estimated variance of <code>theta</code>.</td>
+</tr>
+<tr class="even">
+<td><code>ties</code></td>
+<td>Estimated probability of ties between groups.</td>
+</tr>
+<tr class="odd">
+<td><code>statistic</code></td>
+<td>Test statistic value for the selected test.</td>
+</tr>
+<tr class="even">
+<td><code>pval</code></td>
+<td>P-value of the test.</td>
+</tr>
+<tr class="odd">
+<td><code>rejH0</code></td>
+<td><code>TRUE</code> if null hypothesis is rejected (<code>pval &lt; alpha</code>).</td>
+</tr>
+<tr class="even">
+<td><code>separation</code></td>
+<td><code>TRUE</code> if the samples are separated.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="util.r" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="util.r"><span class="header-section-number">3.3</span> <code>util.R</code></h3>
+<p>The script <code>util.R</code> contains several helper functions, including functions for simulating data matrices according to a target distribution, conducting the simulations presented in the paper, and plotting the results. For details on these functions, we refer the reader to the comments within the corresponding <code>R</code>-script</p>
+</section>
+</section>
+<section id="how-to-reproduce-the-results-shown-in-the-paper" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="how-to-reproduce-the-results-shown-in-the-paper"><span class="header-section-number">4</span> How to reproduce the results shown in the paper</h2>
+<section id="all-results" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="all-results"><span class="header-section-number">4.1</span> All results</h3>
+<p>To reproduce the results from the simulation study, start by opening the project file <code>nonparTests.Rproj</code>, followed by the script <code>simulation_main.R</code>. At the top of this script, necessary functions are sourced from <code>util.R</code>, <code>getStudentizedPermutationTest.R</code>, and <code>getTestResults.R</code>. It also runs <code>settings.R</code>, which generates two data frames—<code>df_t1e</code> and <code>df_pwr_cov</code>—containing the 840 and 153 parameter settings used in the simulation study for type-1 error and power/coverage, respectively. The script then calls the functions <code>simulateT1E.R</code> and <code>simulatePWRCOV.R</code> (defined in <code>util.R</code>) to iterate over <code>df_t1e</code> and <code>df_pwr_cov</code> in a for-loop, conducting the simulations. Once all settings have been processed, the results are saved in the <code>results</code> folder as <code>df_t1e.csv</code> and <code>df_pwr_cov.csv</code>. The files are already located in the corresponding folders. To generate the corresponding plots, open and run the script <code>plots.R</code>. This will produce all figures illustrating the simulation results and save them in the <code>plots/main paper</code> and <code>plots/supplement</code> directories. The files will be named according to their appearance in the paper in <code>.eps</code> format. <code>.pdf</code>-Versions of the plots are also located in the corresponding folder. Thus, running <code>simulation_main.R</code> followed by <code>plots.R</code> will reproduce all the results and figures presented in the paper. For full reproducibility, each of the data frames containing the simulation settings includes a column specifying the random seeds used in the study. These seeds were randomly generated but are fixed, ensuring that re-running the code will yield identical results.</p>
+<p>To reproduce the results of the example in <strong>Section 2</strong> and <strong>Section 6</strong> of the paper as well as the results for the data in <strong>Table 2</strong>, run the file <code>examples.R</code>. Running the code will produce the boxplot next to Table 1 (page 4) and the results depicted in Table 5 (page 19-20). Moreover, the results for the Table 2 cited on page 8 (lines 196-199) and page 11 (Remark 4.2, point 1) are computed.</p>
+</section>
+<section id="exemplary-results" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="exemplary-results"><span class="header-section-number">4.2</span> Exemplary results</h3>
+<p>Due to the extensive runtime required for 100,000 simulation runs, particularly for the computationally intensive studentized permutation test, the simulation study was conducted on a high-performance computing cluster. In correspondence with the <em>Checklist for Code and Data Supplements</em>, we provide the intermediate results of our simulation study for type-1 error rate, power and coverage in the <code>results</code> folder as <code>.csv</code>-files. Running the <code>plots.R</code> scripts will produces the figures shown in the main paper and the supplement. Moreover, to avoid rerunning the entire simulation study, we created a script named <code>simulation_repro_example.R</code>. This script should replicate the simulation for some specific settings and compares the results to those stored in the corresponding <code>.csv</code> files for these settings.</p>
+</section>
+</section>
+<section id="session-info" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="session-info"><span class="header-section-number">5</span> Session Info</h2>
+<section id="local" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="local"><span class="header-section-number">5.1</span> Local</h3>
+<p>The example results presented in this paper that were run on a local computer. Specifically the example boxplot on page 4 and the results in Table 5 (page 19) as well as the results for the data in Table 2, were generated using the following R packages and their corresponding versions:</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>R version 4.1.2 (2021-11-01)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 10 x64 (build 19045)
+
+Matrix products: default
+
+locale:
+[1] LC_COLLATE=German_Germany.1252  LC_CTYPE=German_Germany.1252   
+[3] LC_MONETARY=German_Germany.1252 LC_NUMERIC=C                   
+[5] LC_TIME=German_Germany.1252    
+
+attached base packages:
+[1] splines   stats4    stats     graphics  grDevices utils     datasets 
+[8] methods   base     
+
+other attached packages:
+ [1] ggpubr_0.4.0       data.table_1.14.2  VGAM_1.1-8         MASS_7.3-57       
+ [5] matrixStats_0.62.0 forcats_1.0.0      stringr_1.4.0      dplyr_1.1.0       
+ [9] purrr_0.3.4        readr_2.1.2        tidyr_1.2.0        tibble_3.1.7      
+[13] ggplot2_3.4.1      tidyverse_1.3.2   
+
+loaded via a namespace (and not attached):
+ [1] lubridate_1.8.0     assertthat_0.2.1    digest_0.6.31      
+ [4] utf8_1.2.2          R6_2.5.1            cellranger_1.1.0   
+ [7] backports_1.4.1     reprex_2.0.1        evaluate_0.22      
+[10] httr_1.4.3          pillar_1.9.0        rlang_1.1.3        
+[13] googlesheets4_1.0.0 readxl_1.4.0        rstudioapi_0.13    
+[16] car_3.0-13          rmarkdown_2.14      googledrive_2.0.0  
+[19] htmlwidgets_1.6.2   munsell_0.5.0       broom_1.0.3        
+[22] compiler_4.1.2      modelr_0.1.8        xfun_0.39          
+[25] pkgconfig_2.0.3     htmltools_0.5.5     tidyselect_1.2.0   
+[28] fansi_1.0.3         crayon_1.5.1        tzdb_0.3.0         
+[31] dbplyr_2.1.1        withr_2.5.0         grid_4.1.2         
+[34] jsonlite_1.8.4      gtable_0.3.0        lifecycle_1.0.3    
+[37] DBI_1.1.2           magrittr_2.0.3      scales_1.2.1       
+[40] carData_3.0-5       cli_3.3.0           stringi_1.7.6      
+[43] ggsignif_0.6.3      fs_1.6.3            xml2_1.3.3         
+[46] ellipsis_0.3.2      generics_0.1.2      vctrs_0.6.1        
+[49] tools_4.1.2         glue_1.6.2          hms_1.1.1          
+[52] abind_1.4-5         fastmap_1.1.0       yaml_2.3.5         
+[55] colorspace_2.0-3    gargle_1.2.0        rstatix_0.7.0      
+[58] rvest_1.0.2         knitr_1.39          haven_2.5.0        </code></pre>
+</div>
+</div>
+</section>
+<section id="cluster" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="cluster"><span class="header-section-number">5.2</span> Cluster</h3>
+<p>The simulation study was conducted on a high-performance computing cluster to mitigate the extensive runtime. The specifications of the R packages used in the code and installed on the cluster are as follows:</p>
+<ul>
+<li><p>R-Version: r-base=4.4.2=h64c9cd0_0</p></li>
+<li><p>Tidyverse: r-tidyverse=2.0.0=r44h785f33e_2</p></li>
+<li><p>matrixStats: r-matrixstats=1.4.1=r44h2b5f3a1_0</p></li>
+<li><p>MASS: r-mass=7.3_60.0.1=r44hb1dbf0f_1</p></li>
+<li><p>VGAM: r-vgam=1.1_12=r44hb67ce94_0</p></li>
+<li><p>data.table: r-data.table=1.15.4=r44h5f06984_1</p></li>
+<li><p>ggpubr: r-ggpubr=0.6.0=r44hc72bb7e_2</p></li>
+</ul>
+<p>The complete cluster specification is provided in the attached file <code>environment.yml</code> .</p>
+<p>To avoid rerunning the entire simulation study, we created a script named <code>simulation_repro_example.R</code>. Running this script with the R Version and packages above should replicate the results for the simulation study in those specific settings.</p>
+<!-- -->
+
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Code Documentation"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "A New Approach to the Nonparametric Behrens-Fisher Problem with Compatible Confidence Intervals"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> </span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - name: "Stephen Schueuerhuis"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-location: right</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-title: "Contents"</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">    smooth-scroll: true</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: cosmo  # You can change to flatly, journal, simplex, etc.</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co">    highlight-style: github</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> visual</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="in">```{r message=FALSE, warning=FALSE}</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co">#| results: false</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"functions/util.R"</span>)</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"functions/getTestResults.R"</span>)</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"functions/getStudentizedPermutationTest.R"</span>)</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"settings.R"</span>)</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## Content</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>This files contains a short documentation of the code belonging to the submitted paper ***A New Approach to the Nonparametric Behrens-Fisher Problem with Compatible Confidence Intervals*** and illustrates how the results shown in the paper may be reproduced.</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>To begin working with the submitted code, open the R project file <span class="in">`nonparTests.Rproj`</span>. This ensures that all file paths are correctly set relative to the project root.</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## File and Folder-Structure</span></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>The project contains the following files and folders:</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>| Name                         | Description                                                                                                                                                                                                                                              |</span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>|-------------------|-----------------------------------------------------|</span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>| <span class="in">`functions`</span>                  | Folder containing the main function <span class="in">`getTestResults()`</span>, <span class="in">`getStudentizedPermutationTest()`</span> as well as helper functions in <span class="in">`util.R`</span>                                                                                                                        |</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>| <span class="in">`results`</span>                    | Folder containing result files <span class="in">`df_t1e.csv`</span> and <span class="in">`df_pwr_cov.csv`</span>                                                                                                                                                                                         |</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>| <span class="in">`plots`</span>                      | Folder containing the plots shown in the paper                                                                                                                                                                                                           |</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>| <span class="in">`settings.R`</span>                 | <span class="in">`R`</span>-script creating <span class="in">`tibble`</span>s containing the simulation scenarios                                                                                                                                                                                        |</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>| <span class="in">`simulation_main.R`</span>          | <span class="in">`R`</span>-script performing the simulation and creating the files <span class="in">`df_t1e.csv`</span> and <span class="in">`df_pwr_cov.csv`</span>. To do that, the simulation functions <span class="in">`simulateT1E()`</span> and <span class="in">`simulatePWRCOV()`</span> from <span class="in">`util.R`</span>, which are wrapper functions around <span class="in">`getTestResults()`</span> are used |</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>| <span class="in">`plots.R`</span>                    | <span class="in">`R`</span>-script importing <span class="in">`df_t1e.csv`</span> and <span class="in">`df_pwr_cov.csv`</span> and creating the plots shown in the paper                                                                                                                                                         |</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>| <span class="in">`examples.R`</span>                 | <span class="in">`R`</span>-script creating the boxplot and computing the results for the data examples (Section 2 and 6 in the paper, data from Table 2), see 4.1 in the documentation                                                                                          |</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>| <span class="in">`simulation_repro_example.R`</span> | Script reproducing results for some simulation settings, see 4.2 in the documentation                                                                                                                                                                    |</span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>: File and Folder-Structure {tbl-colwidths="<span class="sc">\[</span>20,80<span class="sc">\]</span>"}</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="fu">## Main functionality</span></span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a><span class="fu">### `getTestResults.R`</span></span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>This function compares two samples represented by matrices <span class="in">`X`</span> and <span class="in">`Y`</span>. It loops over each column (i.e., sample) and applies the Brunner-Munzel test and the newly proposed $C^2$ test. If <span class="in">`permutation = TRUE`</span>, a studentized permutation version of the Brunner-Munzel test is also performed. The results for each sample are stacked vertically into a <span class="in">`data.table`</span>, with the <span class="in">`sample`</span> column indicating which dataset each row of results belongs to. This function constitutes the core of the simulation study and is called repeatedly across all simulation settings.</span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>| Name          | Description                                                                                                            |</span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>|-------------------|-----------------------------------------------------|</span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>| <span class="in">`X`</span>           | An $n \times d$ matrix containing the first sample, where each column $i=1,\dots,d$ represents an independent dataset. |</span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>| <span class="in">`Y`</span>           | An $n \times d$ matrix containing the second sample, structured similarly to <span class="in">`X`</span>.                                      |</span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>| <span class="in">`alpha`</span>       | Significance level used for hypothesis testing.                                                                        |</span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>| <span class="in">`permutation`</span> | Logical (<span class="in">`TRUE`</span>/<span class="in">`FALSE`</span>). If <span class="in">`TRUE`</span>, a studentized permutation test is performed.                                      |</span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>| <span class="in">`nperm`</span>       | Integer specifying the number of permutations (used only if <span class="in">`permutation = TRUE`</span>).                                     |</span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>| <span class="in">`seed`</span>        | Integer value used to set the random seed for reproducibility.                                                         |</span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>: Function Inputs {tbl-colwidths="<span class="sc">\[</span>25,75<span class="sc">\]</span>"}</span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>| Name         | Description                                                                |</span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>|-------------------|-----------------------------------------------------|</span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>| <span class="in">`test`</span>       | A character string indicating the name of the test to be performed.        |</span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>| <span class="in">`lower`</span>      | Lower bound of the confidence interval.                                    |</span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>| <span class="in">`theta`</span>      | Estimated Mann--Whitney effect size.                                       |</span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>| <span class="in">`upper`</span>      | Upper bound of the confidence interval.                                    |</span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>| <span class="in">`variance`</span>   | Estimated variance of <span class="in">`theta`</span>.                                             |</span>
+<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>| <span class="in">`ties`</span>       | Estimated probability of ties between groups.                              |</span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>| <span class="in">`statistic`</span>  | Test statistic value for the selected test.                                |</span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a>| <span class="in">`pval`</span>       | P-value associated with the test.                                          |</span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a>| <span class="in">`rejH0`</span>      | Logical; <span class="in">`TRUE`</span> if the null hypothesis is rejected (i.e., <span class="in">`pval &lt; alpha`</span>). |</span>
+<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a>| <span class="in">`separation`</span> | Logical; <span class="in">`TRUE`</span> if the samples are separated.                              |</span>
+<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a>| <span class="in">`sample`</span>     | Identifier for the dataset (column) the results correspond to.             |</span>
+<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>: Function Outputs {tbl-colwidths="<span class="sc">\[</span>25,75<span class="sc">\]</span>"}</span>
+<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a><span class="fu">#### **Example function call:**</span></span>
+<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">28072025</span>)</span>
+<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">15</span><span class="sc">*</span><span class="dv">2</span>), <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">15</span>)</span>
+<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">15</span><span class="sc">*</span><span class="dv">2</span>, <span class="at">mean =</span> <span class="dv">1</span>), <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">15</span>)</span>
+<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a><span class="fu">getTestResults</span>(<span class="at">X =</span> X, <span class="at">Y =</span> Y, <span class="at">alpha =</span> <span class="fl">0.05</span>, <span class="at">permutation =</span> <span class="cn">TRUE</span>, <span class="at">nperm =</span> <span class="fl">1e4</span>, <span class="at">seed =</span> <span class="dv">9072925</span>) </span>
+<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a><span class="fu">### `getStudentizedPermutationTest.R`</span></span>
+<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a>This function is called by the <span class="in">`getTestResults()`</span> function and performs the studentized permutation test proposed by Neubert and Brunner (2007), using <span class="in">`nperm`</span> permutations. The results from this test are then combined with the results of other tests returned by <span class="in">`getTestResults()`</span>. The seed parameter ensures reproducibility, which is required due to the randomness introduced by the permutation procedure. Some parameters are used as input and written into the output to ensure consistent formatting with the other tests from <span class="in">`getTestResults()`</span>.</span>
+<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a>| Argument | Description                                                 |</span>
+<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a>|----------|-------------------------------------------------------------|</span>
+<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a>| <span class="in">`x`</span>      | An n × 1 vector containing the first sample.                |</span>
+<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a>| <span class="in">`y`</span>      | An n × 1 vector containing the second sample.               |</span>
+<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a>| <span class="in">`nperm`</span>  | Number of permutations (used only if <span class="in">`permutation = TRUE`</span>). |</span>
+<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a>| <span class="in">`alpha`</span>  | Significance level for hypothesis testing.                  |</span>
+<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a>| <span class="in">`seed`</span>   | Random seed for reproducibility.                            |</span>
+<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a>: Function Inputs {tbl-colwidths="<span class="sc">\[</span>25,75<span class="sc">\]</span>"}</span>
+<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a>| Result       | Description                                             |</span>
+<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a>|--------------|---------------------------------------------------------|</span>
+<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a>| <span class="in">`Tn_BM`</span>      | Test statistic from the Brunner-Munzel test.            |</span>
+<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a>| <span class="in">`theta`</span>      | Estimated Mann--Whitney effect size.                    |</span>
+<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a>| <span class="in">`se`</span>         | Estimated standard error (DeLong variance estimator).   |</span>
+<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a>| <span class="in">`test`</span>       | Name of the test performed.                             |</span>
+<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a>| <span class="in">`lower`</span>      | Lower bound of the confidence interval.                 |</span>
+<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a>| <span class="in">`upper`</span>      | Upper bound of the confidence interval.                 |</span>
+<span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a>| <span class="in">`variance`</span>   | Estimated variance of <span class="in">`theta`</span>.                          |</span>
+<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a>| <span class="in">`ties`</span>       | Estimated probability of ties between groups.           |</span>
+<span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a>| <span class="in">`statistic`</span>  | Test statistic value for the selected test.             |</span>
+<span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a>| <span class="in">`pval`</span>       | P-value of the test.                                    |</span>
+<span id="cb5-125"><a href="#cb5-125" aria-hidden="true" tabindex="-1"></a>| <span class="in">`rejH0`</span>      | <span class="in">`TRUE`</span> if null hypothesis is rejected (<span class="in">`pval &lt; alpha`</span>). |</span>
+<span id="cb5-126"><a href="#cb5-126" aria-hidden="true" tabindex="-1"></a>| <span class="in">`separation`</span> | <span class="in">`TRUE`</span> if the samples are separated.                    |</span>
+<span id="cb5-127"><a href="#cb5-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-128"><a href="#cb5-128" aria-hidden="true" tabindex="-1"></a>: Function Outputs {tbl-colwidths="<span class="sc">\[</span>25,75<span class="sc">\]</span>"}</span>
+<span id="cb5-129"><a href="#cb5-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-130"><a href="#cb5-130" aria-hidden="true" tabindex="-1"></a><span class="fu">### `util.R`</span></span>
+<span id="cb5-131"><a href="#cb5-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-132"><a href="#cb5-132" aria-hidden="true" tabindex="-1"></a>The script <span class="in">`util.R`</span> contains several helper functions, including functions for simulating data matrices according to a target distribution, conducting the simulations presented in the paper, and plotting the results. For details on these functions, we refer the reader to the comments within the corresponding <span class="in">`R`</span>-script</span>
+<span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a><span class="fu">## How to reproduce the results shown in the paper</span></span>
+<span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a><span class="fu">### All results</span></span>
+<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a>To reproduce the results from the simulation study, start by opening the project file <span class="in">`nonparTests.Rproj`</span>, followed by the script <span class="in">`simulation_main.R`</span>. At the top of this script, necessary functions are sourced from <span class="in">`util.R`</span>, <span class="in">`getStudentizedPermutationTest.R`</span>, and <span class="in">`getTestResults.R`</span>. It also runs <span class="in">`settings.R`</span>, which generates two data frames---<span class="in">`df_t1e`</span> and <span class="in">`df_pwr_cov`</span>---containing the 840 and 153 parameter settings used in the simulation study for type-1 error and power/coverage, respectively. The script then calls the functions <span class="in">`simulateT1E.R`</span> and <span class="in">`simulatePWRCOV.R`</span> (defined in <span class="in">`util.R`</span>) to iterate over <span class="in">`df_t1e`</span> and <span class="in">`df_pwr_cov`</span> in a for-loop, conducting the simulations. Once all settings have been processed, the results are saved in the <span class="in">`results`</span> folder as <span class="in">`df_t1e.csv`</span> and <span class="in">`df_pwr_cov.csv`</span>. The files are already located in the corresponding folders. To generate the corresponding plots, open and run the script <span class="in">`plots.R`</span>. This will produce all figures illustrating the simulation results and save them in the <span class="in">`plots/main paper`</span> and <span class="in">`plots/supplement`</span> directories. The files will be named according to their appearance in the paper in <span class="in">`.eps`</span> format. <span class="in">`.pdf`</span>-Versions of the plots are also located in the corresponding folder. Thus, running <span class="in">`simulation_main.R`</span> followed by <span class="in">`plots.R`</span> will reproduce all the results and figures presented in the paper. For full reproducibility, each of the data frames containing the simulation settings includes a column specifying the random seeds used in the study. These seeds were randomly generated but are fixed, ensuring that re-running the code will yield identical results.</span>
+<span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a>To reproduce the results of the example in **Section 2** and **Section 6** of the paper as well as the results for the data in **Table 2**, run the file <span class="in">`examples.R`</span>. Running the code will produce the boxplot next to Table 1 (page 4) and the results depicted in Table 5 (page 19-20). Moreover, the results for the Table 2 cited on page 8 (lines 196-199) and page 11 (Remark 4.2, point 1) are computed.</span>
+<span id="cb5-141"><a href="#cb5-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-142"><a href="#cb5-142" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exemplary results</span></span>
+<span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-144"><a href="#cb5-144" aria-hidden="true" tabindex="-1"></a>Due to the extensive runtime required for 100,000 simulation runs, particularly for the computationally intensive studentized permutation test, the simulation study was conducted on a high-performance computing cluster. In correspondence with the *Checklist for Code and Data Supplements*, we provide the intermediate results of our simulation study for type-1 error rate, power and coverage in the <span class="in">`results`</span> folder as <span class="in">`.csv`</span>-files. Running the <span class="in">`plots.R`</span> scripts will produces the figures shown in the main paper and the supplement. Moreover, to avoid rerunning the entire simulation study, we created a script named <span class="in">`simulation_repro_example.R`</span>. This script should replicate the simulation for some specific settings and compares the results to those stored in the corresponding <span class="in">`.csv`</span> files for these settings.</span>
+<span id="cb5-145"><a href="#cb5-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-146"><a href="#cb5-146" aria-hidden="true" tabindex="-1"></a><span class="fu">## Session Info</span></span>
+<span id="cb5-147"><a href="#cb5-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-148"><a href="#cb5-148" aria-hidden="true" tabindex="-1"></a><span class="fu">### Local</span></span>
+<span id="cb5-149"><a href="#cb5-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-150"><a href="#cb5-150" aria-hidden="true" tabindex="-1"></a>The example results presented in this paper that were run on a local computer. Specifically the example boxplot on page 4 and the results in Table 5 (page 19) as well as the results for the data in Table 2, were generated using the following R packages and their corresponding versions:</span>
+<span id="cb5-151"><a href="#cb5-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-154"><a href="#cb5-154" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-155"><a href="#cb5-155" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span>
+<span id="cb5-156"><a href="#cb5-156" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-157"><a href="#cb5-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-158"><a href="#cb5-158" aria-hidden="true" tabindex="-1"></a><span class="fu">### Cluster</span></span>
+<span id="cb5-159"><a href="#cb5-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-160"><a href="#cb5-160" aria-hidden="true" tabindex="-1"></a>The simulation study was conducted on a high-performance computing cluster to mitigate the extensive runtime. The specifications of the R packages used in the code and installed on the cluster are as follows:</span>
+<span id="cb5-161"><a href="#cb5-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-162"><a href="#cb5-162" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>R-Version: r-base=4.4.2=h64c9cd0_0</span>
+<span id="cb5-163"><a href="#cb5-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-164"><a href="#cb5-164" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Tidyverse: r-tidyverse=2.0.0=r44h785f33e_2</span>
+<span id="cb5-165"><a href="#cb5-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-166"><a href="#cb5-166" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>matrixStats: r-matrixstats=1.4.1=r44h2b5f3a1_0</span>
+<span id="cb5-167"><a href="#cb5-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-168"><a href="#cb5-168" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>MASS: r-mass=7.3_60.0.1=r44hb1dbf0f_1</span>
+<span id="cb5-169"><a href="#cb5-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-170"><a href="#cb5-170" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>VGAM: r-vgam=1.1_12=r44hb67ce94_0</span>
+<span id="cb5-171"><a href="#cb5-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-172"><a href="#cb5-172" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>data.table: r-data.table=1.15.4=r44h5f06984_1</span>
+<span id="cb5-173"><a href="#cb5-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-174"><a href="#cb5-174" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>ggpubr: r-ggpubr=0.6.0=r44hc72bb7e_2</span>
+<span id="cb5-175"><a href="#cb5-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-176"><a href="#cb5-176" aria-hidden="true" tabindex="-1"></a>The complete cluster specification is provided in the attached file <span class="in">`environment.yml`</span> .</span>
+<span id="cb5-177"><a href="#cb5-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-178"><a href="#cb5-178" aria-hidden="true" tabindex="-1"></a>To avoid rerunning the entire simulation study, we created a script named <span class="in">`simulation_repro_example.R`</span>. Running this script with the R Version and packages above should replicate the results for the simulation study in those specific settings.</span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+<script src="README_files/libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
