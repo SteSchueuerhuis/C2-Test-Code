@@ -1,0 +1,1 @@
+This repository contains the code used to reproduce the results from the paper “A New Approach to the Nonparametric Behrens–Fisher Problem with Compatible Confidence Intervals.” For details about the code, please see the README.html file.
